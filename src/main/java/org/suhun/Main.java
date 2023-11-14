@@ -10,11 +10,11 @@ public class Main {
         linkedListImp.add(40);
 
 //        linkedListImp.search(20);
-        linkedListImp.delete(30);
+//        linkedListImp.delete(30);
         linkedListImp.add(50);
         linkedListImp.add(60);
-        linkedListImp.delete(10);
-        linkedListImp.delete(60);
+        linkedListImp.delete(90);
+//        linkedListImp.delete(60);
         linkedListImp.printNode();
     }
 }

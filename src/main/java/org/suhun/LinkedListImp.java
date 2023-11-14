@@ -80,32 +80,68 @@ public class LinkedListImp {
     }
 
     public boolean delete(int value){
-        boolean result = false;
-        if(start == null){
-            System.out.println("Node is empty!!!");
-            return result;
-        }
-        Node haveNextNode;
-        Node preNode;
-        if(start.val == value){
-            start = start.next;
-            System.out.println("Remove first node!!!");
-            return true;
-        }else{
-            preNode = start;
-            haveNextNode = start.next;
-            while(haveNextNode!=null){
-                if(haveNextNode.val == value){
-                    preNode.next = haveNextNode.next;
-                    System.out.println("Remove " + value);
+        //solution 1
+//        boolean result = false;
+//        if(start == null){
+//            System.out.println("Node is empty!!!");
+//            return result;
+//        }
+//        Node haveNextNode;
+//        Node preNode;
+//        if(start.val == value){
+//            start = start.next;
+//            System.out.println("Remove first node!!!");
+//            return true;
+//        }else{
+//            preNode = start;
+//            haveNextNode = start.next;
+//            while(haveNextNode!=null){
+//                if(haveNextNode.val == value){
+//                    preNode.next = haveNextNode.next;
+//                    System.out.println("Remove " + value);
+//                    return true;
+//                }else{
+//                    preNode = haveNextNode;
+//                    haveNextNode = haveNextNode.next;
+//                }
+//            }
+//            System.out.println("Not find " + value);
+//            return false;
+//        }
+//    }
+            //solution 2
+            boolean result = false;
+            if(start == null){
+                System.out.println("Node is empty!!!");
+                return false;
+            }
+            Node node = start;
+            Node node_target = null;
+            Node node_pre = null;
+
+            while (true){
+                if(node == null) break;
+                if(node.val == value){
+                    node_target = node;
+                    System.out.println("Find value!!!");
+                    break;
+                }
+                node_pre = node;
+                node = node.next;
+            }
+
+            if(node_target!=null){
+                if(node_target == start){
+                    start = start.next;
+                    System.out.println("Find value in start!!!");
                     return true;
                 }else{
-                    preNode = haveNextNode;
-                    haveNextNode = haveNextNode.next;
+                    node_pre.next = node_target.next;
+                    System.out.println("Find value in midden!!!");
+                    return true;
                 }
             }
-            System.out.println("Not find " + value);
+            System.out.println("Doesn't find node!!!");
             return false;
         }
-    }
 }
