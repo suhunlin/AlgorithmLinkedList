@@ -8,7 +8,13 @@ public class Main {
         linkedListImp.add(20);
         linkedListImp.add(30);
         linkedListImp.add(40);
+
+//        linkedListImp.search(20);
+        linkedListImp.delete(30);
+        linkedListImp.add(50);
+        linkedListImp.add(60);
+        linkedListImp.delete(10);
+        linkedListImp.delete(60);
         linkedListImp.printNode();
-        linkedListImp.search(20);
     }
 }

@@ -78,4 +78,34 @@ public class LinkedListImp {
         System.out.println(val + ":value not found " );
         return null;
     }
+
+    public boolean delete(int value){
+        boolean result = false;
+        if(start == null){
+            System.out.println("Node is empty!!!");
+            return result;
+        }
+        Node haveNextNode;
+        Node preNode;
+        if(start.val == value){
+            start = start.next;
+            System.out.println("Remove first node!!!");
+            return true;
+        }else{
+            preNode = start;
+            haveNextNode = start.next;
+            while(haveNextNode!=null){
+                if(haveNextNode.val == value){
+                    preNode.next = haveNextNode.next;
+                    System.out.println("Remove " + value);
+                    return true;
+                }else{
+                    preNode = haveNextNode;
+                    haveNextNode = haveNextNode.next;
+                }
+            }
+            System.out.println("Not find " + value);
+            return false;
+        }
+    }
 }
