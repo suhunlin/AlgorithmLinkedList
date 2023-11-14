@@ -9,6 +9,6 @@ public class Main {
         linkedListImp.add(30);
         linkedListImp.add(40);
         linkedListImp.printNode();
-        linkedListImp.search(40);
+        linkedListImp.search(20);
     }
 }

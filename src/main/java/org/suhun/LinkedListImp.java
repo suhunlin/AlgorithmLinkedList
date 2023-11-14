@@ -36,27 +36,46 @@ public class LinkedListImp {
     }
 
     public Integer search(int val){
-        int count = 1;
+        //solution 1 suhun
+//        int count = 1;
+//        if(start == null){
+//            System.out.println("Node is empty!!!");
+//            return null;
+//        }
+//        if(start.val == val){
+//            System.out.println("Found " + start.val + ",total find "+count+" times!");
+//            return start.val;
+//        }else{
+//            Node haveNext = start.next;
+//            while(haveNext!=null){
+//                count++;
+//                if(haveNext.val == val){
+//                    System.out.println("Found "+ haveNext.val+", total find "+ count + " times!!!");
+//                    return haveNext.val;
+//                }else{
+//                    haveNext = haveNext.next;
+//                }
+//            }
+//        }
+//        System.out.println("Nothing Found !!!Total find "+ count + " times!!!");
+//        return null;
+        //solution 2 teacher
         if(start == null){
             System.out.println("Node is empty!!!");
             return null;
-        }
-        if(start.val == val){
-            System.out.println("Found " + start.val + ",total find "+count+" times!");
-            return start.val;
         }else{
-            Node haveNext = start.next;
-            while(haveNext!=null){
-                count++;
-                if(haveNext.val == val){
-                    System.out.println("Found "+ haveNext.val+", total find "+ count + " times!!!");
-                    return haveNext.val;
+            Node node = this.start;
+            while(true){
+                if(node == null) break;
+                if(node.val == val){
+                    System.out.println("Find value " + node.val);
+                    return node.val;
                 }else{
-                    haveNext = haveNext.next;
+                    node = node.next;
                 }
             }
         }
-        System.out.println("Nothing Found !!!Total find "+ count + " times!!!");
+        System.out.println(val + ":value not found " );
         return null;
     }
 }
