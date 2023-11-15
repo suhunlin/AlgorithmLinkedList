@@ -41,7 +41,7 @@ public class LinkedListImplement {
 
     public Integer search(int value){
         Node node = start;
-        if(start != null){
+        if(node != null){
             while(true){
                 if(node == null){
                     System.out.println("已經搜尋到最後一個節點了，跳出迴圈!!!");
@@ -63,4 +63,5 @@ public class LinkedListImplement {
         System.out.println("沒有搜尋到任何節點有"+value+"的值!!!");
         return null;
     }
+
 }
