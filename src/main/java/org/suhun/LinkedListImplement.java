@@ -88,15 +88,12 @@ public class LinkedListImplement {
             }
             //如果有搜尋到value，nodeTarget會有值，此時把nodeTarget的前一個節點指向nodeTarget的下一個節點
             if(nodeTarget!=null){
-                if(nodePre==null&&nodeTarget.next==null){//只有一個節點此時nodePre的值會是null，不加這行會run time error
-                    start = null;
-                }else if(nodePre == null){//有很多個節點，但是刪除第一個節點
-                    start = nodeTarget.next;
+                if(nodeTarget == start){//如果搜尋到的為第一個節點
+                    start = start.next; //把第一個節點的下一個給start
                 }else{
-                    System.out.println("成功刪除"+nodeTarget.val+"的節點");
                     nodePre.next = nodeTarget.next;
                 }
-
+                System.out.println("成功刪除值為"+nodeTarget.val+"的節點！！！");
             }else{
                 System.out.println("沒有搜尋到節點有"+value+"的值");
             }

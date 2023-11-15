@@ -8,7 +8,7 @@ public class Main {
         linkedListImplement.addNode(30);
         linkedListImplement.addNode(40);
         linkedListImplement.addNode(50);
-        linkedListImplement.delete( 50);
+        linkedListImplement.delete( 10);
 
         linkedListImplement.outputNode();
 //        linkedListImplement.search(40);
